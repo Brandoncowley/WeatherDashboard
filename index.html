@@ -22,18 +22,20 @@
             <div class= "col-12 col-lg-3">
                 <h5>Search for a City</h5>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Enter city name only" aria-label="City Name" aria-describedby="button-addon2">
+                    <input type="text" id = "enter-city" class="form-control" placeholder="Enter city name only" aria-label="City Name" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                      <button class="btn btn-primary" type="button" id="search-button">Search</button>
                     </div>
                 </div>
+                <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
+                <form id="history"></form>
             </div>
             <!--Current section for weather = Name, date, icon, temp, humidity,
             wind speed, UV index
                 UV Index has color code-->
 
             <div class= "col-12 col-lg-9">
-                <div class="col-lg-11 card m-3" id="today-weather">
+                <div class="col-lg-11 card m-3 d-none" id="today-weather">
                     <div class="card-body">
                         <h3 id="city-name" class="city-name align-middle">THIS IS FOR CITY NAME</h3>
                         <img id="current-pic" alt="WEATHER GRAPHIC">
@@ -48,47 +50,19 @@
 
         <!--Future section = 5 day forecase with date, icon for conditions,
 temperature, humidity-->
- <div class = "grid-container grid-4-5">
-     <div id = "left-element">Left Element</div>
-     <div id = "right-element">Right Element</div>
- </div>   
 
 <div class="text-center bg-primary text-light p-1">
         <h3>5 Day Forecast</h3>
     </div>       
 
-    <section class="container my-5">
-        <div class="row">
+    <section class="container row my-5">
+        <div id="fiveday-header"></div>
             <div class="col-lg-1"></div>
-            <div class="col-12 col-md-6 col-lg-2">
-            <h3>DATE 1</h3>
-            <img id="current-pic" alt="WEATHER GRAPHIC">
-            <p>Temperature</p>
-            <p>Humidity</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-2">
-            <h3>DATE 2</h3>
-            <img id="current-pic" alt="WEATHER GRAPHIC">
-            <p>Temperature</p>
-            <p>Humidity</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-2">
-            <h3>DATE 3</h3>
-            <img id="current-pic" alt="WEATHER GRAPHIC">
-            <p>Temperature</p>
-            <p>Humidity</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-2">
-            <h3>DATE 4</h3>
-            <img id="current-pic" alt="WEATHER GRAPHIC">
-            <p>Temperature</p>
-            <p>Humidity</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-2">
-            <h3>DATE 5</h3>
-            <img id="current-pic" alt="WEATHER GRAPHIC">
-            <p>Temperature</p>
-            <p>Humidity</p>
+            <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+            <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+            <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+            <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+            <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
           </div>
         </div>
       </section>
@@ -96,8 +70,8 @@ temperature, humidity-->
         </div>
     </div>
 
-<!--Search History bar - saved data from searches-->
 
-<script src = "./script.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src = "./script.js"></script>
 </body>
 </html>
